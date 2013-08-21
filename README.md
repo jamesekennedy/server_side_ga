@@ -20,9 +20,9 @@ Or install it yourself as:
 
 Once installed you can call events and transactions.  
 
-Eg:
-'ServerSideGa.event(tracking_code, client_id, category, action, label = nil, value = nil, time = Time.now )'
-'ServerSideGa.transaction( tracking_code, client_id, id, name, revenue, shipping = 0, tax = 0, currency = "USD", time = Time.now)'
+
+    ServerSideGa.event(tracking_code, client_id, category, action, label = nil, value = nil, time = Time.now )
+    ServerSideGa.transaction( tracking_code, client_id, id, name, revenue, shipping = 0, tax = 0, currency = "USD", time = Time.now)
 
 ## Contributing
 
