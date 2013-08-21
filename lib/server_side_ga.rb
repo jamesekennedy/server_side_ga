@@ -1,5 +1,5 @@
 require "server_side_ga/version"
-require 'rest_client'
+require "rest_client"
 
 
 module ServerSideGa
@@ -57,7 +57,7 @@ private
   def self.hit( params )
     begin
       response = RestClient.post(@@endpoint, params )
-      return response.code
+      return response.code == "200"
     rescue  RestClient::Exception => rex
       return false
     end
