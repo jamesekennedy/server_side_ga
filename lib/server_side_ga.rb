@@ -9,8 +9,11 @@ module ServerSideGa
   @@endpoint = "http://www.google-analytics.com/collect"
   @@version = "1"
  
-   
-   def self.event(tracking_code, client_id, category, action, label = nil, value = nil )
+
+      
+   def self.event(tracking_code, client_id, category, action, label = nil, value = nil, time = Time.now )
+
+    queue_time = (Time.now - time ) * 1000
 
     params = {
       :v => @@version,
@@ -20,7 +23,8 @@ module ServerSideGa
       :ec => category,
       :ea => action,
       :el => label,
-      :ev => value
+      :ev => value,
+      :qt => queue_time
     }
 
     self.hit( params )
