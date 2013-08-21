@@ -57,7 +57,7 @@ private
   def self.hit( params )
     begin
       response = RestClient.post(@@endpoint, params )
-      return response.code == "200"
+      return response.code == 200
     rescue  RestClient::Exception => rex
       return false
     end
